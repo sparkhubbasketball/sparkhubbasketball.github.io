@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 0; 
+                font-family: 'Raleway', sans-serif;   
+            }
+            #title{
+                background: rgb(255,255,224);
+                border:2px solid;
+                border-radius:5px;
+                padding:10px;
+                text-align:justify;
+                display:flex;
+                justify-content:center;
+
+                white-space: nowrap;
+            }
+            h2{
+                font-size:30px
+            }
+            p{
+                font-size: 30px;
+            }
+            input {
+                display: none;
+            }
+            label {
+                border: 1px solid grey;
+                font-size: 25px;
+                background-color: rgb(255,255,224);
+                display: block;
+                cursor: pointer;
+                padding: 10px 10px 10px 25px;
+                position: relative;
+                user-select: none;
+                width:200px;
+                
+            }
+            label:before {
+                content: " ";
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent transparent black;
+                height: 0;
+                font-size: 0;
+                position: absolute;
+                top: 15px;
+                left: 10px;
+                transition: transform 0.5s;
+                transform-origin: 3px center;
+            }
+            .accordian div {
+                font-size: 16px;  
+                height:0;
+                overflow:hidden;
+                opacity:0;
+            }
+            input:checked ~ label:before {
+                transform: rotate(90deg)
+            }
+            input:checked ~ div {
+                padding: 10px;
+                opacity: 1;
+                height: auto;
+            }
+            .sub-header{
+                min-height: 50vh;
+                width: 100%;
+                background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img/charity.jpg);
+                background-position: center;
+                background-size: cover;
+                position: relative;
+            }
+            .logo{
+                text-align:left;
+            }
+            .logo a{
+                font-style:none;
+                color:white;
+                text-decoration: none;
+                font-size: 30px
+            }
+            nav{
+                display: flex;
+                padding: 1% 4%;
+                padding-left: 2%;
+                justify-content: space-between;
+                align-items: center;
+            }
+            nav img{
+                width: 100px;
+            }
+            .nav-links{
+                flex: 1;
+                text-align: right;
+            }
+            .nav-links ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 8px 12px;
+                position: relative;
+            }
+            .nav-links ul li a{
+                color:white;
+                text-decoration: none;
+                font-size: 20px
+            }
+            .nav-links ul li::after{
+                content: '';
+                width: 0%;
+                height: 2px;
+                background:white;
+                display: block;
+                margin: auto;
+                transition: 0.5s;
+            }
+            .nav-links ul li:hover::after{
+                width:100%
+            }
+            .text-box{
+                width: 90%;
+                color: #fff;
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align:center;    
+            }
+            .text-box h1{
+                padding-bottom: 25px;
+                font-size:50px
+            }
+            .main-button{
+                display: inline-block;
+                text-decoration: none;
+                color:#fff;
+                border: 1px solid #fff;
+                padding: 12px 34px;
+                font-size: 13px;
+                background: transparent;
+                position: relative;
+                cursor: pointer;
+            }
+            .cause{
+                width:80%;
+                margin:auto;
+                text-align: center;
+                padding-top: 100px;
+            }
+        </style>
+    <head>
+    <body>
+        <section class="sub-header">
+            <nav>
+                <a href="website.html"><img src="img/sparkhublogo.jpg"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="register.html">REGISTER</a></li>
+                        <li><a href="class.html">CLASS</a></li>
+                        <li><a href="coaches.html">COACHES</a></li>
+                        <li><a href="cause.html">CAUSE</a></li>
+                    </ul>
+                </div>
+            </nav>
+        
+        <div class="text-box">
+            <h1>Our Cause<br></h1>
+        </div>
+        </section>
+        <section class="cause">
+            <p>Through giving basketball coaching to elementary school students in the Bay Area, we hope to be able to spread joy and life lessons that come with playing
+                the sport of basketball. All funds that we make through this program is donated to charity.</p>
+        </section> 
+    </body>
+</html>
