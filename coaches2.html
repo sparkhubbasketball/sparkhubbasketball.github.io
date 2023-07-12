@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 0; 
+                font-family: 'Raleway', sans-serif;   
+            }
+            #title{
+                background: rgb(255,255,224);
+                border:2px solid;
+                border-radius:5px;
+                padding:10px;
+                text-align:justify;
+                display:flex;
+                justify-content:center;
+
+                white-space: nowrap;
+            }
+            h2{
+                font-size:30px
+            }
+            p{
+                font-size:20px;
+            }
+            input {
+                display: none;
+            }
+            label {
+                border: 1px solid grey;
+                font-size: 25px;
+                background-color: rgb(255,255,224);
+                display: block;
+                cursor: pointer;
+                padding: 10px 10px 10px 25px;
+                position: relative;
+                user-select: none;
+                width:300px;
+                
+            }
+            label:before {
+                content: " ";
+                border-width: 10px;
+                border-style: solid;
+                border-color: transparent transparent transparent black;
+                height: 0;
+                font-size: 0;
+                position: absolute;
+                top: 15px;
+                left: 10px;
+                transition: transform 0.5s;
+                transform-origin: 3px center;
+            }
+            .accordian div {
+                font-size: 16px;  
+                height:0;
+                overflow:hidden;
+                opacity:0;
+            }
+            .accordian{
+                padding-top: 10px;
+                padding-left: 5px;
+            }
+            input:checked ~ label:before {
+                transform: rotate(90deg)
+            }
+            input:checked ~ div {
+                padding: 10px;
+                opacity: 1;
+                height: auto;
+            }
+            .header{
+                min-height: 50vh;
+                width: 100%;
+                background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(img/coach.jpg);
+                background-position: center;
+                background-size: cover;
+                position: relative;
+            }
+            .logo{
+                text-align:left;
+            }
+            .logo a{
+                font-style:none;
+                color:white;
+                text-decoration: none;
+                font-size: 30px
+            }
+            nav{
+                display: flex;
+                padding: 1% 4%;
+                padding-left: 2%;
+                justify-content: space-between;
+                align-items: center;
+            }
+            nav img{
+                width: 100px;
+            }
+            .nav-links{
+                flex: 1;
+                text-align: right;
+            }
+            .nav-links ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 8px 12px;
+                position: relative;
+            }
+            .nav-links ul li a{
+                color:white;
+                text-decoration: none;
+                font-size: 20px
+            }
+            .nav-links ul li::after{
+                content: '';
+                width: 0%;
+                height: 2px;
+                background:white;
+                display: block;
+                margin: auto;
+                transition: 0.5s;
+            }
+            .nav-links ul li:hover::after{
+                width:100%
+            }
+            .text-box{
+                width: 90%;
+                color: #fff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                text-align:center;    
+            }
+            .text-box h1{
+                font-size:50px
+            }
+            .main-button{
+                display: inline-block;
+                text-decoration: none;
+                color:#fff;
+                border: 1px solid #fff;
+                padding: 12px 34px;
+                font-size: 13px;
+                background: transparent;
+                position: relative;
+                cursor: pointer;
+            }
+            .about{
+                width:80%;
+                margin:auto;
+                text-align: center;
+                padding-top: 100px;
+            }
+            .coachprofile{
+                max-width: 50%;
+            }
+            .coachprofile img{
+                float:left;
+                padding: 10px 10px 10px 10px;
+            }
+            .profile-row{
+                margin:5% 5% 2.5% 0%;
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
+    <head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="website.html"><img src="img/sparkhublogo-removebg-preview.png"></a>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="register.html">REGISTER</a></li>
+                        <li><a href="class.html">CLASS</a></li>
+                        <li><a href="coaches2.html">COACHES</a></li>
+                        <li><a href="cause.html">CAUSE</a></li>
+                    </ul>
+                </div>
+            </nav>
+        
+        <div class="text-box">
+            <h1>Coaches<br></h1>
+        </div>
+        </section>
+        <div class="profile-row">
+            <div class="coachprofile">
+                    <img src="img/edwinprofile.jpg" width=30%>
+                    <p>I'm Edwin and I'm in 11th grade at Valley Christian High School. I first started playing basketball when I was 6 and have experience playing on my school's basketball team.</p>
+            </div>
+            
+            <div class="coachprofile">
+                    <img src="img/vincentprofile.png" width=30%>
+                    <p>My name is Vincent Wu and I am currently a senior at Mission San Jose High School. I have been playing basketball since
+                        3rd grade and played club basketball before. I was also one of the founders of Sparkhub Foundation's basketball coaching
+                        program.</p>
+            </div>
+        </div>
+        <div class="profile-row">  
+            <div class="coachprofile">
+                    <img src="img/aaronprofile.jpg" width=30%>
+                    <p>Hey, I’m Aaron! I’m a junior at Mission San Jose High School and I’ve been playing basketball in both school and outside teams for the majority of my life. Although I stopped playing basketball competitively rather recently, I’m still in love with the sport and the fun it has to offer. In addition to my love for basketball, I also love working with kids! These reasons have led to why I chose to become a coach for the Sparkhub Foundation!
+                    </p>
+            </div>
+            <div class="coachprofile">
+                    <img src="img/bp_profile.jpg" width=30% >
+                    <p>My name is Brandon Peng and I am currently a senior at Mission San Jose High School. I've been playing basketball since
+                    5th grade and am currently on the Varsity team. I was also one of the founders of Sparkhub Foundation's basketball coaching
+                    program.</p>
+            </div>
+        </div>  
+    </body>
+</html>
