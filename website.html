@@ -34,9 +34,6 @@
             p{
                 font-size:20px
             }
-            input {
-                display: none;
-            }
             label {
                 border: 1px solid grey;
                 font-size: 25px;
@@ -67,14 +64,6 @@
                 height:0;
                 overflow:hidden;
                 opacity:0;
-            }
-            input:checked ~ label:before {
-                transform: rotate(90deg)
-            }
-            input:checked ~ div {
-                padding: 10px;
-                opacity: 1;
-                height: auto;
             }
             .header{
                 min-height: 100vh;
@@ -161,8 +150,43 @@
                 padding-top: 100px;
             }
             .contact{
-                background: whitesmoke;
-                background-size:cover;
+                width:100%;
+                height: 100vh;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+            form{
+                background:grey;
+                display: flex;
+                flex-direction: column;
+                padding: 2vw 4vw;
+                width: 90%;
+                max-width: 600px;
+                border-radius: 10px;
+            }
+            form h3{
+                font-weight: 800;
+                margin-bottom:20px;
+            }
+            form input, form textarea{
+                border: 0;
+                margin: 10px 0;
+                padding: 15px;
+                outline: none;
+                background: white;
+                font-size:16px;
+            }
+            form button{
+                padding: 15px;
+                height:50px;
+                background-color:lightyellow;
+                outline: none;
+                font-size: 18px;
+                border-radius: 30px;
+                width: 500px;
+                margin: 15px auto 0;
+                cursor: pointer;
             }
         </style>
     <head>
@@ -185,9 +209,32 @@
             <a href="about.html" class="main-button">About Us</a>
         </div>
         </section>
-        <section class="contact">
-            <h1 id="footer">Contact Us</h1>
-            <p id="footer">Email: sparkhubbasketball@gmail.com</p>
-        </section>
+        <div class="contact">
+            <form name = "contact-us" onSubmit ="sendEmail(); reset(); return false">
+                <h3>CONTACT US</h3>
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="email" placeholder="Email" required>
+                <input type="text" name="phone" placeholder="Phone Number" required>
+                <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </body>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwgrMKSsE2mFumoW6CBAxRN_tQGC6Q6xC_c-95gC5Dus4MIC3GolG7Lml-MoYRy5fSA/exec'
+        const form = document.forms['contact-us']
+        const name = document.getElementById("name")
+        const email = document.getElementById("email")
+        const phone = document.getElementById("phone")
+        const msg = document.getElementById("message")
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </html>
